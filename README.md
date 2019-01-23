@@ -16,7 +16,7 @@ services:
     # ...
 
     php:
-        image: ...
+        image: miramir/itis_phpdev:7.3-fpm-alpine
         volumes:
             - ./:/app
         environment:
