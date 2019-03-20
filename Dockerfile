@@ -10,14 +10,12 @@ RUN apk add --update --no-cache icu freetype libjpeg-turbo libpng zlib \
     && docker-php-ext-enable redis \
     && docker-php-ext-enable apcu \
     && rm -rf /tmp/pear \
-
     # устанавливаем php-spx
     && wget https://github.com/NoiseByNorthwest/php-spx/archive/v0.4.0.tar.gz \
     && tar -xzf v0.4.0.tar.gz \
     && cd php-spx-0.4.0 \
     && phpize && ./configure && make && make install \
     && cd ../ && rm -rf php-spx-0.4.0 && rm -rf v0.4.0.tar.gz \
-
     && apk del .build-deps
 
 
